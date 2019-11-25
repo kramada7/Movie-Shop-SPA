@@ -18,6 +18,11 @@ export class ApiService {
     );
   }
 
+  create(path: string, resource: Object = {}, options?): Observable<any> {
+    return this.http.post(`${environment.apiUrl}${path}`, JSON.stringify(resource), options)
+      .pipe(map(response => response), catchError(e => throwError(new Error('SOMETHING BAD HAPPENED'))));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

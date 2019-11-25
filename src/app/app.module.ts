@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 //our own
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { HomeComponent } from './home/home.component';
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
+import { LoginComponent } from './login/login.component';
+import { MyMoviesComponent } from './user/my-movies/my-movies.component';
+import { MyFavoritesComponent } from './user/my-favorites/my-favorites.component';
 
 //attributes
 @NgModule({
@@ -23,13 +27,17 @@ import { MovieCardComponent } from './shared/components/movie-card/movie-card.co
     HeaderComponent,
     MovieListComponent,
     HomeComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    LoginComponent,
+    MyMoviesComponent,
+    MyFavoritesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent] //component (controller + view) will be run as the main program
